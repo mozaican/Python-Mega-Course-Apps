@@ -12,7 +12,7 @@ def get_definition(word):
                              f"Enter Y if yes and any key for no: ").lower()
         return data[get_close_matches(word, data.keys())[0]] if similar_word == 'y' else "Please re-check the word"
     else:
-        return "This word doesn't exist in the dictionary"
+        return "This word doesn't exist."
 
 
 word = input('Enter a word: ').lower()
