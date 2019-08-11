@@ -4,7 +4,7 @@ from difflib import get_close_matches
 data = json.load(open("data.json"))
 
 
-def translate(word):
+def get_definition(word):
     if word in data:
         return data[word]
     elif len(get_close_matches(word, data.keys())) > 0:
@@ -17,7 +17,7 @@ def translate(word):
 
 word = input('Enter a word: ').lower()
 
-output = translate(word)
+output = get_definition(word)
 
 if type(output) is list:
     for item in output:
